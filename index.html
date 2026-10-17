@@ -1,69 +1,41 @@
-
 <!doctype html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#b8d657">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Расписание Softly.fit</title>
 <style>
-:root{--pink:#ec69b5;--pink2:#f58acb;--green:#b8d657;--ink:#282b30;font-family:Arial,Helvetica,sans-serif;color:var(--ink)}*{box-sizing:border-box}body{margin:0;background:#fffafc;min-height:100vh}.wrap{width:100%;margin:0 auto;padding:28px 16px}.wrap.choice{max-width:1100px;padding-top:54px}.wrap.detail{max-width:none;padding:16px 18px}.panel{background:#fff;border:6px solid var(--green);border-radius:36px;padding:34px;box-shadow:0 14px 36px #db8fb01a}.eyebrow{color:#b52d80;font-size:13px;letter-spacing:.16em;font-weight:800;margin-bottom:14px}.heading{display:inline-block;background:var(--green);border-radius:22px;padding:15px 22px;margin-bottom:13px}h1{font-size:clamp(24px,3.2vw,39px);margin:0;letter-spacing:-.03em}p{color:#4e5158;font-size:16px;line-height:1.5;margin:5px 0 0}.grid{display:grid;gap:14px;margin-top:30px}.branch{isolation:isolate;position:relative;overflow:hidden;min-height:91px;width:100%;text-align:left;display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;border-radius:24px;padding:23px 29px;background:linear-gradient(115deg,var(--pink),#f36cbb 65%,var(--pink2));color:#fff;font-size:clamp(15px,1.7vw,21px);font-weight:800;cursor:pointer;transition:transform .18s,box-shadow .18s}.branch:hover{transform:translateY(-2px);box-shadow:0 9px 18px #d35a9b30}.branch:focus-visible,.back:focus-visible{outline:3px solid var(--green);outline-offset:4px}.branch::before,.branch::after{content:"";position:absolute;z-index:-1;border-radius:50%;pointer-events:none}.branch::before{width:150px;height:150px;background:#ffd0eb6b;left:-66px;top:-61px;box-shadow:calc(100vw - 250px) 95px 0 -32px #ffd0eb55}.branch::after{width:170px;height:170px;border:1.5px solid #ffe0f0a8;right:70px;bottom:-126px}.branch:nth-child(2n)::before{left:auto;right:-70px;top:-65px}.branch:nth-child(3n)::after{right:36%;bottom:-143px}.branch .arrow{font-size:30px;line-height:1;flex:none;font-weight:400}.hidden{display:none!important}.back{border:0;background:#fff;color:#bd2783;border-radius:22px;padding:13px 20px;font-size:15px;font-weight:800;cursor:pointer;margin-bottom:16px}.schedule-shell{background:var(--green);border-radius:30px;padding:22px;min-height:75vh;position:relative;overflow:hidden}.schedule-shell::before{content:"";position:absolute;right:-55px;top:-65px;width:210px;height:210px;border-radius:50%;background:#ffffff35;pointer-events:none}.schedule-title{position:relative;font-size:clamp(22px,3vw,32px);margin:0 0 18px}.schedule-content{position:relative;background:#fff;border-radius:20px;padding:12px;min-height:72vh;width:100%;overflow-x:auto}lk-schedule{display:block;width:100%;min-height:72vh}@media(max-width:650px){.wrap.choice{padding:18px 10px}.wrap.detail{padding:8px 5px}.panel{padding:22px 15px;border-width:4px;border-radius:24px}.heading{padding:12px 14px;border-radius:15px}.grid{margin-top:23px;gap:11px}.branch{min-height:77px;padding:17px 18px;border-radius:17px}.branch .arrow{font-size:24px}.schedule-shell{padding:12px 6px;border-radius:18px}.schedule-title{padding:0 6px}.schedule-content{padding:3px;border-radius:12px}}
+:root{--pink:#ee65b6;--green:#b9df58;--ink:#292a30}*{box-sizing:border-box}body{margin:0;background:#fffafd;color:var(--ink);font-family:Arial,Helvetica,sans-serif}.shell{width:min(1320px,calc(100% - 44px));margin:48px auto;padding:38px 42px 34px;background:#fff;border:7px solid var(--green);border-radius:43px;box-shadow:0 15px 38px #e8bdd51a}.eyebrow{font-weight:800;color:#ec159b;letter-spacing:3px;font-size:17px;margin:0 0 20px}.heading{position:relative;overflow:hidden;width:100%;min-height:130px;border-radius:26px;display:flex;align-items:center;padding:20px 50px;background:linear-gradient(115deg,#c5e784,#b7dc5e 58%,#d4eb9c)}.heading h1{position:relative;z-index:1;font-size:clamp(27px,3.5vw,49px);line-height:1.1;margin:0;letter-spacing:-1.5px}.heart{font-size:.82em}.ornament:before,.ornament:after{content:"";position:absolute;pointer-events:none;border-radius:50%}.heading:before{width:230px;height:230px;background:#ffffff40;left:40%;top:-150px}.heading:after{width:240px;height:240px;border:2px solid #ffffffb8;right:17%;bottom:-192px}.heading .bubble{position:absolute;width:160px;height:160px;border-radius:50%;background:#ffffff52;right:-30px;top:-58px}.heading .smallbubble{position:absolute;width:43px;height:43px;border-radius:50%;border:2px solid #fff;right:22%;top:20px}.intro{font-size:20px;margin:20px 0 24px}.locations{display:grid;gap:16px}.location{position:relative;isolation:isolate;overflow:hidden;min-height:106px;display:flex;align-items:center;justify-content:space-between;gap:16px;border:0;border-radius:27px;padding:20px 36px;color:white;background:linear-gradient(100deg,#f078c1,#ee62b5 65%,#ef7bc2);font-size:clamp(17px,2.05vw,28px);font-weight:800;text-align:left;cursor:pointer;text-decoration:none;transition:transform .15s,filter .15s}.location:hover{transform:translateY(-2px);filter:brightness(1.035)}.location:focus-visible,.back:focus-visible{outline:4px solid #91b733;outline-offset:3px}.location span{position:relative;z-index:2}.arrow{font-size:35px;font-weight:400}.location:before{content:"";position:absolute;width:180px;height:180px;border-radius:50%;background:#ffd4ed5c;left:-95px;top:-55px}.location:after{content:"";position:absolute;width:190px;height:190px;border:2px solid #ffe1f3a6;border-radius:50%;right:10%;bottom:-154px}.location:nth-child(2):after{right:-70px;bottom:-80px;background:#ffceeb45;border:0}.location:nth-child(3):before{left:auto;right:-80px;top:-95px}.location:nth-child(4):after{right:16%;bottom:-140px;background:#ffd4ed55;border:0}.location:nth-child(5):after{right:8%;bottom:-155px}.schedule-screen{display:none}.schedule-screen.active{display:block}.chooser.hidden{display:none}.back{background:#fff;color:#d72389;border:0;border-radius:30px;padding:14px 22px;font-size:17px;font-weight:800;cursor:pointer;margin-bottom:20px}.schedule-panel{padding:22px;border-radius:28px;background:linear-gradient(135deg,#c8e98b,#b9df58);position:relative;overflow:hidden}.schedule-panel h2{margin:0 0 18px;font-size:clamp(22px,3vw,34px)}.schedule-frame{background:#fff;border-radius:18px;padding:10px;min-height:650px;overflow-x:auto}.schedule-frame lk-schedule{display:block;width:100%;min-width:860px;min-height:600px}.schedule-link{display:inline-block;margin-top:14px;color:#273016;font-weight:700}.note{font-size:13px;color:#626262;margin:14px 0 0}@media(max-width:700px){.shell{width:calc(100% - 20px);margin:14px auto;padding:20px 14px;border-width:4px;border-radius:28px}.eyebrow{font-size:11px;letter-spacing:1.6px;margin-bottom:14px}.heading{min-height:100px;padding:16px 18px;border-radius:20px}.heading h1{font-size:clamp(24px,6vw,34px);letter-spacing:-.5px}.intro{font-size:15px;line-height:1.45;margin:16px 0 20px}.locations{gap:11px}.location{min-height:86px;padding:16px 17px;border-radius:19px;font-size:clamp(15px,3.8vw,19px)}.arrow{font-size:25px}.schedule-panel{padding:12px;border-radius:18px}.schedule-frame{padding:6px}.schedule-frame lk-schedule{min-width:760px}.back{font-size:14px}}
 </style>
 </head>
 <body>
-<main id="main" class="wrap choice">
-<section id="choose" class="panel">
-<div class="eyebrow">SOFTLY.FIT · С ЗАБОТОЙ О ТЕБЕ</div>
-<div class="heading"><h1>Расписание Softly.fit 🤍</h1></div>
-<p>Выберите студию, чтобы посмотреть тренировки и записаться.</p>
-<div class="grid" id="branches"></div>
-</section>
-<section id="details" class="hidden">
-<div class="schedule-shell">
-<button class="back" id="back" type="button">← Все филиалы</button>
-<h2 class="schedule-title" id="branchTitle"></h2>
-<div class="schedule-content" id="schedule"></div>
-</div>
-</section>
+<main class="shell">
+ <p class="eyebrow">SOFTLY.FIT · С ЗАБОТОЙ О ТЕБЕ</p>
+ <section id="chooser" class="chooser">
+  <header class="heading"><span class="bubble"></span><span class="smallbubble"></span><h1>Расписание Softly.fit <span class="heart">🤍</span></h1></header>
+  <p class="intro">Выберите студию, чтобы посмотреть тренировки и записаться.</p>
+  <nav class="locations" aria-label="Выбор филиала">
+   <button class="location" data-club="1"><span>Петровский бульвар, 7, Мурино</span><span class="arrow">↗</span></button>
+   <button class="location" data-club="3"><span>Ручьёвский проспект, 15, Мурино</span><span class="arrow">↗</span></button>
+   <button class="location" data-club="2"><span>Дальневосточный проспект, 33к1, Дыбенко</span><span class="arrow">↗</span></button>
+   <button class="location" data-club="4"><span>Проспект Художников, 10к1, Озерки</span><span class="arrow">↗</span></button>
+   <button class="location" data-club="5"><span>Европейский проспект, 18к2, Кудрово</span><span class="arrow">↗</span></button>
+  </nav>
+ </section>
+ <section id="scheduleScreen" class="schedule-screen" aria-label="Расписание выбранной студии">
+  <div class="schedule-panel">
+   <button id="back" class="back" type="button">← Все филиалы</button>
+   <h2 id="branchTitle"></h2>
+   <div id="scheduleFrame" class="schedule-frame"></div>
+   <a id="directLink" class="schedule-link" target="_blank" rel="noopener noreferrer">Открыть расписание отдельно ↗</a>
+  </div>
+ </section>
 </main>
 <script>
-const branches=[
-{name:'Петровский бульвар, 7, Мурино',club:1},
-{name:'Ручьёвский проспект, 15, Мурино',club:3},
-{name:'Дальневосточный проспект, 33к1, Дыбенко',club:2},
-{name:'Проспект Художников, 10к1, Озерки',club:4},
-{name:'Европейский проспект, 18к2, Кудрово',club:5}
-];
-const main=document.getElementById('main');
-const choose=document.getElementById('choose');
-const details=document.getElementById('details');
-const schedule=document.getElementById('schedule');
-const selected=Number(new URLSearchParams(location.search).get('club'));
-const branch=branches.find(b=>b.club===selected);
-for(const b of branches){
- const button=document.createElement('button');
- button.type='button';button.className='branch';
- const label=document.createElement('span');label.textContent=b.name;
- const arrow=document.createElement('span');arrow.className='arrow';arrow.setAttribute('aria-hidden','true');arrow.textContent='↗';
- button.append(label,arrow);
- button.addEventListener('click',()=>{const url=new URL(location.href);url.searchParams.set('club',String(b.club));location.assign(url.href)});
- document.getElementById('branches').append(button);
-}
-document.getElementById('back').addEventListener('click',()=>{const url=new URL(location.href);url.searchParams.delete('club');location.assign(url.href)});
-if(branch){
- choose.classList.add('hidden');details.classList.remove('hidden');main.className='wrap detail';
- document.getElementById('branchTitle').textContent=branch.name;
- const widget=document.createElement('lk-schedule');
- widget.setAttribute('theme','light');
- widget.setAttribute('domain','https://softly.fitbase.io/');
- widget.setAttribute('data-subdomain','softly');
- widget.setAttribute('data-club',String(branch.club));
- schedule.append(widget);
- const script=document.createElement('script');
- script.src='https://softly.fitbase.io/vue-resources/personal-account/dist/schedule-init.js';
- script.defer=true;
- document.body.append(script);
-}
+const clubs={1:'Петровский бульвар, 7, Мурино',3:'Ручьёвский проспект, 15, Мурино',2:'Дальневосточный проспект, 33к1, Дыбенко',4:'Проспект Художников, 10к1, Озерки',5:'Европейский проспект, 18к2, Кудрово'};
+const chooser=document.getElementById('chooser'),screen=document.getElementById('scheduleScreen'),frame=document.getElementById('scheduleFrame');
+function showClub(id){if(!clubs[id])return;chooser.classList.add('hidden');screen.classList.add('active');document.getElementById('branchTitle').textContent=clubs[id];document.getElementById('directLink').href='https://softly.fitbase.io/lk/schedule?club='+id;frame.innerHTML='';const el=document.createElement('lk-schedule');el.setAttribute('theme','light');el.setAttribute('domain','https://softly.fitbase.io/');el.setAttribute('data-subdomain','softly');el.setAttribute('data-club',id);frame.appendChild(el);const s=document.createElement('script');s.src='https://softly.fitbase.io/vue-resources/personal-account/dist/schedule-init.js';s.defer=true;frame.appendChild(s);history.replaceState(null,'','#club='+id);window.scrollTo(0,0)}
+function goBack(){screen.classList.remove('active');chooser.classList.remove('hidden');frame.innerHTML='';history.replaceState(null,'',location.pathname+location.search);window.scrollTo(0,0)}
+document.querySelectorAll('[data-club]').forEach(b=>b.addEventListener('click',()=>showClub(b.dataset.club)));document.getElementById('back').addEventListener('click',goBack);const id=location.hash.match(/^#club=(\d+)$/)?.[1];if(id&&clubs[id])showClub(id);
 </script>
 </body>
 </html>
